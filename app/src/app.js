@@ -36,9 +36,10 @@ class App extends React.Component {
     });
   }
 
-  handleDateInput(e) {
+  handleDateInput(value) {
+    var newDate = value._d.toLocaleDateString() + ' - ' + value._d.getHours() + ':' + value._d.getMinutes();
     this.setState({
-      twitDate: e._d
+      twitDate: newDate
     });
   }
 
@@ -62,6 +63,8 @@ class App extends React.Component {
 
     return (
       <div>
+      <h1>Fake twit generator</h1>
+      <div className="mainWrapper">
         <div className="formWrapper">
           <div className="userInputWrapper">
             @<input className="userInput" placeholder="Twitter username..." value={this.state.username} onChange={this.handleUserInput} onBlur={this.fetchUserData} />
@@ -69,18 +72,28 @@ class App extends React.Component {
           <div className="twitInputWrapper">
             Twit text: <input className="twitInput" placeholder="Twit text..." value={this.state.twitText} onChange={this.handleTwitInput} />
           </div>
-          <Datetime onChange={this.handleDateInput} />
-          <br />
-          <button className="userButton" onClick={this.fetchUserData}>Fetch user long name</button>
+          <div className="dateInputWrapper">
+            <span>Twit date:</span>
+            <Datetime value={this.props.value} dateFormat="MMM DD, YYYY" timeFormat="hh:mm A" onChange={this.handleDateInput} />
+          </div>
         </div>
+      </div>
+      <div className="mainWrapper">
         <div className="twitWrapper">
-          <img src={this.state.srcImage} alt="Twitter profile img" width="48" />
-          <p>Name: {this.state.name}</p>
+          <div className="twiTtop">
+            <img src={this.state.srcImage} alt="Twitter profile img" width="48" />
+            <p>{this.state.name}</p>
+            <p>@{this.state.username}</p>
+          </div>
+          <div className="twitCenter">
+            <p>{this.state.twitText}</p>
+          </div>
+          <div className="twitBottom">
+            <p>{this.state.twitDate.toString()}</p>
+            <p>111 Retweets&nbsp;&nbsp;&nbsp;333 Likes</p>
+          </div>
         </div>
-        <div className="twitWrapper">
-          <p>{this.state.twitText}</p>
-          <p>Date: {this.state.twitDate.toString()}</p>
-        </div>
+      </div>
       </div>
     )
   }

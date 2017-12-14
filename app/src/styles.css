@@ -1,22 +1,66 @@
 body {
   margin: 0;
   font: 100 14px 'Roboto';
+  background-color: #eee;
+}
+
+.mainWrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formWrapper {
   margin: auto;
+  max-width: 70%;
+  flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.twitWrapper {
+  margin: 20px auto;
+  max-width: 70%;
+  flex: 1;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 45px;
+  margin: 20px 0 30px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #eee;
 }
 
 .userInputWrapper {
-  position: relative;
-  float: left;
-  margin: 0 0 0 0;
+  flex: 1;
 }
 
 .twitInputWrapper {
+  flex: 2;
+}
+
+.dateInputWrapper {
+  flex: 1;
+}
+
+.dateInputWrapper span{
   position: relative;
   float: left;
-  margin: 0 0 0 30px;
+  margin: 0 0 0 0;
 }
 
 input {
@@ -33,13 +77,19 @@ input:focus{
   transition: 0.2s ease-in;
 }
 
-.twitWrapper {
-  margin: 20px auto;
+input.twitInput {
+  width: 320px;
+  min-width: 320px;
 }
 
 .twitWrapper img {
   border-radius: 50%;
 }
+
+.twiTtop {}
+.twitCenter {}
+.twitBottom {}
+
 
 /*!
  * https://github.com/YouCanBookMe/react-datetime
@@ -48,7 +98,7 @@ input:focus{
 .rdt {
   position: relative;
   float: left;
-  margin: 0 0 0 30px;
+  margin: 0 0 0 0;
 }
 .rdtPicker {
   display: none;
