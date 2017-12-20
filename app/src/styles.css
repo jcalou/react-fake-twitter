@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font: 100 14px 'Roboto';
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
   background-color: #eee;
 }
 
@@ -15,7 +17,7 @@ body {
 }
 
 .formWrapper {
-  margin: auto;
+  margin: 10px auto;
   max-width: 70%;
   flex: 1;
   display: -webkit-box;
@@ -29,7 +31,8 @@ body {
 
 .twitWrapper {
   margin: 20px auto;
-  max-width: 70%;
+  padding: 30px 40px;
+  max-width: 50%;
   flex: 1;
   border-radius: 5px;
   background-color: #fff;
@@ -60,7 +63,8 @@ h1 {
 .dateInputWrapper span{
   position: relative;
   float: left;
-  margin: 0 0 0 0;
+  margin: 0 3px 0 0;
+  line-height: 23px;
 }
 
 input {
@@ -78,18 +82,161 @@ input:focus{
 }
 
 input.twitInput {
-  width: 320px;
-  min-width: 320px;
+  width: 280px;
+  min-width: 280px;
+}
+
+.retweetsInputWrapper, .likesInputWrapper, .facesInputWrapper, .replysInputWrapper, .dmsInputWrapper {
+  flex: 1;
+}
+.likesInputWrapper, .facesInputWrapper, .replysInputWrapper, .dmsInputWrapper {
+  margin-left: 10px;
 }
 
 .twitWrapper img {
   border-radius: 50%;
 }
 
-.twiTtop {}
-.twitCenter {}
-.twitBottom {}
+.twiTtop {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.twiTtop img {
+  flex: 1;
+  width: 48px;
+  max-width: 48px;
+  height: 48px;
+}
+.twiTtop p {
+  flex: 10;
+  margin-left: 20px;
+}
+.userNameInfo {
+  word-break: break-all;
+}
+.userLongName {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: bold;
+  color: #14171a;
 
+}
+.userName {
+  color: #657786;
+  font-size: 14px;
+}
+
+.twitCenter {}
+.twitText {
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: .01em;
+  white-space: pre-wrap;
+}
+
+.twitBottom2 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.twitBottom2 svg {
+  color: #657786;
+  font-size: 18px;
+  line-height: 18px;
+  width: 18px;
+  height: 18px;
+  float: left;
+}
+.twitDate {
+  color: #657786;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.saveImageButton {
+  background-color: #656376;
+  flex: 1;
+  width: 100px;
+  height: 30px;
+  max-width: 100px;
+}
+.boxWrapper {
+  border-bottom: 1px solid #e6ecf0;
+  border-top: 1px solid #e6ecf0;
+}
+.twitRetweets {
+  flex: 1;
+  border-right: 1px solid #e6ecf0;
+}
+.twitRetweets p {
+  color: #657786;
+  font-size: 14px;
+}
+.twitRetweets p span {
+  color: #14171a;
+  display: inline;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.twitFaces {
+  flex: 2;
+  padding-left: 15px;
+}
+.twitFaces p {
+  color: #657786;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.twitFaces ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.twitFaces ul li{
+  list-style: none;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.twitFaces ul li img{
+  width: 24px;
+  height: 24px;
+}
+
+.twitBottom2 .iconsBottom {
+  flex: 1;
+  margin: 15px 0 0 0;
+}
+
+.twitBottom2 .iconsBottom p {
+  color: #657786;
+  font-size: 13px;
+  line-height: 14px;
+  margin: 3px 0 0 7px;
+  width: 20px;
+  float: left;
+}
+
+
+.twitBottom2 .iconsBottomSpacer {
+  flex: 3;
+}
 
 /*!
  * https://github.com/YouCanBookMe/react-datetime
